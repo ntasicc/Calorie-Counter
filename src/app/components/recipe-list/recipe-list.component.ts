@@ -20,7 +20,7 @@ import { selectAllIngredients } from 'src/app/store/ingredient.selectors';
 export class RecipeListComponent implements OnInit {
   recipes: Observable<readonly Recipe[]> = of([]);
   selectedRecipe: Observable<Recipe> = of();
-
+  RecipeToShow: Recipe | undefined;
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
@@ -31,6 +31,7 @@ export class RecipeListComponent implements OnInit {
   selectSpecificRecipe(recipe: Recipe) {
     if (recipe) {
       this.store.dispatch(RecipeActions.selectRecipe({ recipeID: recipe.id }));
+      this.RecipeToShow = recipe;
     }
   }
 }

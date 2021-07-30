@@ -5,3 +5,6 @@
     (selectRecipe)="selectSpecificRecipe($event)"
   ></app-recipe-card>
 </div>
+<div class="card" *ngIf="RecipeToShow">
+  <app-ingredient-list [selectedRecipe]="RecipeToShow"></app-ingredient-list>
+</div>
