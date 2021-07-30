@@ -12,9 +12,11 @@ import { recipeReducer } from './store/recipe.reducer';
 import { RecipeEffect } from './store/recipe.effects';
 import { ingredientReducer } from './store/ingredient.reducer';
 import { IngredientEffect } from './store/ingredient.effects';
+import { IngredientCardComponent } from './components/ingredient-card/ingredient-card.component';
+import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
 
 @NgModule({
-  declarations: [AppComponent, RecipeCardComponent, RecipeListComponent],
+  declarations: [AppComponent, RecipeCardComponent, RecipeListComponent, IngredientCardComponent, IngredientListComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
