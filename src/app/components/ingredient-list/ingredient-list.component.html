@@ -1,0 +1,6 @@
+<div *ngIf="selectedRecipe">
+  <h1>List of all ingredients for {{ selectedRecipe.name }}</h1>
+</div>
+<div *ngFor="let ingredient of ingredientsForRecipe | async">
+  <app-ingredient-card [ingredient]="ingredient"></app-ingredient-card>
+</div>
