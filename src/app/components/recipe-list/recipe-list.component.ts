@@ -5,6 +5,7 @@ import { Ingredient } from 'src/app/models/ingredient';
 import { Recipe } from 'src/app/models/recipe';
 import { AppState } from 'src/app/store/app.state';
 import * as RecipeActions from '../../store/recipe.actions';
+import { Router } from '@angular/router';
 import * as IngredientActions from '../../store/ingredient.actions';
 import {
   selectAllRecipes,
@@ -20,8 +21,8 @@ import { selectAllIngredients } from 'src/app/store/ingredient.selectors';
 export class RecipeListComponent implements OnInit {
   recipes: Observable<readonly Recipe[]> = of([]);
   selectedRecipe: Observable<Recipe> = of();
-  RecipeToShow: Recipe | undefined;
-  constructor(private store: Store<AppState>) {}
+
+  constructor(private store: Store<AppState>, private router: Router) {}
 
   ngOnInit(): void {
     this.store.dispatch(RecipeActions.loadAllRecipes());
@@ -31,7 +32,7 @@ export class RecipeListComponent implements OnInit {
   selectSpecificRecipe(recipe: Recipe) {
     if (recipe) {
       this.store.dispatch(RecipeActions.selectRecipe({ recipeID: recipe.id }));
-      this.RecipeToShow = recipe;
+      this.router.navigate(['/ingredients']);
     }
   }
 }
