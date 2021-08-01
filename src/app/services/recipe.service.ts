@@ -12,4 +12,11 @@ export class RecipeService {
   getAllrecipes() {
     return this.httpClient.get<Recipe[]>(`${environment.apiURL}recipes`);
   }
+
+  bookmarkRecipe(recipeID: number, newValue: string) {
+    return this.httpClient.patch<Recipe>(
+      `${environment.apiURL}recipes/${recipeID}`,
+      { id: recipeID, bookmark: newValue }
+    );
+  }
 }
