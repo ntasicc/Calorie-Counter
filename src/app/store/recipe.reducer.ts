@@ -21,5 +21,8 @@ export const recipeReducer = createReducer(
   on(RecipeActions.selectRecipe, (state, { recipeID }) => ({
     ...state,
     selectedRecipeID: recipeID,
-  }))
+  })),
+  on(RecipeActions.changeBookmarkSuccess, (state, { recipe }) =>
+    adapter.setOne(recipe, state)
+  )
 );
