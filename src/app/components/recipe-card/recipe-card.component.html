@@ -1,6 +1,12 @@
 <div class="card" *ngIf="recipe">
   <div class="name">
     <h2>{{ recipe.name }}</h2>
+    <div *ngIf="recipe.bookmark === 'no'">
+      <button (click)="changeBookmarkRecipe('yes')">Bookmark</button>
+    </div>
+    <div *ngIf="recipe.bookmark === 'yes'">
+      <button (click)="changeBookmarkRecipe('no')">Remove bookmark</button>
+    </div>
   </div>
   <img class="image" [src]="recipe.image" alt="recipe image" />
   <p>{{ recipe.summary }}</p>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Bookmark } from 'src/app/models/bookmark';
 import { Recipe } from 'src/app/models/recipe';
 
 @Component({
@@ -9,6 +10,7 @@ import { Recipe } from 'src/app/models/recipe';
 export class RecipeCardComponent implements OnInit {
   @Input() recipe: Recipe | undefined;
   @Output() selectRecipe = new EventEmitter<Recipe>();
+  @Output() bookmarkRecipe = new EventEmitter<Bookmark>();
   constructor() {}
 
   ngOnInit(): void {}
@@ -16,6 +18,14 @@ export class RecipeCardComponent implements OnInit {
   showDetailsForRecipe() {
     if (this.recipe) {
       this.selectRecipe.emit(this.recipe);
+    }
+  }
+
+  changeBookmarkRecipe(newValue: string) {
+    if (this.recipe) {
+      let id = this.recipe.id;
+      let value = newValue;
+      this.bookmarkRecipe.emit({ id: id, newValue: value });
     }
   }
 }
