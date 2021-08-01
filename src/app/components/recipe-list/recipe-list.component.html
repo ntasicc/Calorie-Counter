@@ -1,7 +1,9 @@
-<p>recipe-list works!</p>
-<div *ngFor="let recipe of recipes | async">
-  <app-recipe-card
-    [recipe]="recipe"
-    (selectRecipe)="selectSpecificRecipe($event)"
-  ></app-recipe-card>
+<h1 class="list-header">List of all recipes</h1>
+<div class="recipe-holder">
+  <div class="recipe-card" *ngFor="let recipe of recipes | async">
+    <app-recipe-card
+      [recipe]="recipe"
+      (selectRecipe)="selectSpecificRecipe($event)"
+    ></app-recipe-card>
+  </div>
 </div>
