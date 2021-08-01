@@ -14,9 +14,10 @@ import { ingredientReducer } from './store/ingredient.reducer';
 import { IngredientEffect } from './store/ingredient.effects';
 import { IngredientCardComponent } from './components/ingredient-card/ingredient-card.component';
 import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
+import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, RecipeCardComponent, RecipeListComponent, IngredientCardComponent, IngredientListComponent],
+  declarations: [AppComponent, RecipeCardComponent, RecipeListComponent, IngredientCardComponent, IngredientListComponent, TopNavBarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
