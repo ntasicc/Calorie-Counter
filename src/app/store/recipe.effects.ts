@@ -23,4 +23,16 @@ export class RecipeEffect {
       )
     )
   );
+
+  changeBookmarkEffect$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(RecipeActions.changeBookmark),
+      mergeMap((action) =>
+        this.recipeService.bookmarkRecipe(action.id, action.newValue).pipe(
+          map((recipe) => RecipeActions.changeBookmarkSuccess({ recipe })),
+          catchError(() => of({ type: 'change bookmark error' }))
+        )
+      )
+    )
+  );
 }
