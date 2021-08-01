@@ -16,3 +16,16 @@ export const selectRecipe = createAction(
     recipeID: number;
   }>()
 );
+
+export const changeBookmark = createAction(
+  'Change bookmark',
+  props<{
+    id: number;
+    newValue: string;
+  }>()
+);
+
+export const changeBookmarkSuccess = createAction(
+  'Change bookmark success',
+  props<{ recipe: Recipe }>()
+);
