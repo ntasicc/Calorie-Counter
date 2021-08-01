@@ -12,6 +12,7 @@ import {
   selectOneRecipeBasedOnID,
 } from '../../store/recipe.selector';
 import { selectAllIngredients } from 'src/app/store/ingredient.selectors';
+import { Bookmark } from 'src/app/models/bookmark';
 
 @Component({
   selector: 'app-recipe-list',
@@ -34,5 +35,14 @@ export class RecipeListComponent implements OnInit {
       this.store.dispatch(RecipeActions.selectRecipe({ recipeID: recipe.id }));
       this.router.navigate(['/ingredients']);
     }
+  }
+
+  changeBookmarkRecipe(bookmark: Bookmark) {
+    this.store.dispatch(
+      RecipeActions.changeBookmark({
+        id: bookmark.id,
+        newValue: bookmark.newValue,
+      })
+    );
   }
 }

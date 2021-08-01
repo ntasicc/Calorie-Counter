@@ -4,6 +4,7 @@
     <app-recipe-card
       [recipe]="recipe"
       (selectRecipe)="selectSpecificRecipe($event)"
+      (bookmarkRecipe)="changeBookmarkRecipe($event)"
     ></app-recipe-card>
   </div>
 </div>
