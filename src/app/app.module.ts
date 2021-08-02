@@ -17,7 +17,14 @@ import { IngredientListComponent } from './components/ingredient-list/ingredient
 import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, RecipeCardComponent, RecipeListComponent, IngredientCardComponent, IngredientListComponent, TopNavBarComponent],
+  declarations: [
+    AppComponent,
+    RecipeCardComponent,
+    RecipeListComponent,
+    IngredientCardComponent,
+    IngredientListComponent,
+    TopNavBarComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
