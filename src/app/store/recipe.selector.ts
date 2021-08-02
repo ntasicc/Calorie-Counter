@@ -31,3 +31,8 @@ export const selectOneRecipeBasedOnID = createSelector(
   selectIDOfOneRecipe,
   (recipes, recipeID) => recipes[recipeID] ?? null
 );
+
+export const selectBookmarkedRecipes = createSelector(
+  selectAllRecipes,
+  (recipes) => recipes.filter((recipe) => recipe.bookmark === 'yes')
+);
