@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
+
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'ingredients',
     component: IngredientListComponent,
+  },
+  {
+    path: 'mylist',
+    component: RecipeListComponent,
   },
 ];
 
