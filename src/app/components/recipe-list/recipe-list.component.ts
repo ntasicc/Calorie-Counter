@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import * as IngredientActions from '../../store/ingredient.actions';
 import {
   selectAllRecipes,
+  selectBookmarkedRecipes,
   selectOneRecipeBasedOnID,
 } from '../../store/recipe.selector';
 import { selectAllIngredients } from 'src/app/store/ingredient.selectors';
@@ -24,10 +25,16 @@ export class RecipeListComponent implements OnInit {
   selectedRecipe: Observable<Recipe> = of();
 
   constructor(private store: Store<AppState>, private router: Router) {}
-
+  header: string = '';
   ngOnInit(): void {
-    this.store.dispatch(RecipeActions.loadAllRecipes());
-    this.recipes = this.store.select(selectAllRecipes);
+    if (this.router.url === '/mylist') {
+      this.recipes = this.store.select(selectBookmarkedRecipes);
+      this.header = 'Bookmarked recipes';
+    } else {
+      this.store.dispatch(RecipeActions.loadAllRecipes());
+      this.recipes = this.store.select(selectAllRecipes);
+      this.header = 'List of all recipes';
+    }
   }
 
   selectSpecificRecipe(recipe: Recipe) {
