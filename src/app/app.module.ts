@@ -15,6 +15,8 @@ import { IngredientEffect } from './store/ingredient.effects';
 import { IngredientCardComponent } from './components/ingredient-card/ingredient-card.component';
 import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
 import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.component';
+import { AuthReducer } from './store/auth.reducer';
+import { AuthtEffect } from './store/auth.effects';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,12 @@ import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.compone
     StoreModule.forRoot({
       recipes: recipeReducer,
       ingredients: ingredientReducer,
+      user: AuthReducer,
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
     }),
-    EffectsModule.forRoot([RecipeEffect, IngredientEffect]),
+    EffectsModule.forRoot([RecipeEffect, IngredientEffect, AuthtEffect]),
   ],
   providers: [],
   bootstrap: [AppComponent],
