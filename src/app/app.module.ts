@@ -17,6 +17,8 @@ import { IngredientListComponent } from './components/ingredient-list/ingredient
 import { TopNavBarComponent } from './components/top-nav-bar/top-nav-bar.component';
 import { AuthReducer } from './store/auth.reducer';
 import { AuthtEffect } from './store/auth.effects';
+import { SigninComponent } from './components/signin/signin.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { AuthtEffect } from './store/auth.effects';
     IngredientCardComponent,
     IngredientListComponent,
     TopNavBarComponent,
+    SigninComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
