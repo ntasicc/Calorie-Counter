@@ -1,16 +1,46 @@
 {
+  "users": [
+    {
+      "id": 0,
+      "firstName": "Nikola",
+      "lastName": "Tasic",
+      "username": "ntasicc",
+      "password": "12345",
+      "bookmarked": [0, 2],
+      "allTimeCalories": "0",
+      "allTimeCarbs": "0",
+      "allTimeFat": "0",
+      "allTimeProtein": "0"
+    }
+  ],
   "recipes": [
     {
       "id": 0,
       "name": "Cola Beans",
       "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5307655.jpg&w=596&h=399&c=sc&poi=face&q=85",
-      "summary": "Don't let the recipe name throw you off. Savory baked beans are given a sweet twist in this unique dish. This is a favorite at potlucks and barbeques, says recipe creator OHHCANDY. I've often wondered if I get invited for my company or my Cola Beans!"
+      "summary": "Don't let the recipe name throw you off. Savory baked beans are given a sweet twist in this unique dish. This is a favorite at potlucks and barbeques, says recipe creator OHHCANDY. I've often wondered if I get invited for my company or my Cola Beans!",
+      "bookmark": "yes"
     },
     {
       "id": 1,
       "name": "Shoepeg Corn Salad",
       "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1166630.jpg&w=596&h=596&c=sc&poi=face&q=85",
-      "summary": "No cooking required for this refreshing side salad. Reviewer lutzflcat says, The shoepeg corn is crisp, and the dressing has a nice tang to it. This was a welcome change from my typical mac or potato salad that I often serve with grilled chicken."
+      "summary": "No cooking required for this refreshing side salad. Reviewer lutzflcat says, The shoepeg corn is crisp, and the dressing has a nice tang to it. This was a welcome change from my typical mac or potato salad that I often serve with grilled chicken.",
+      "bookmark": "no"
+    },
+    {
+      "id": 3,
+      "name": "Shoepeg Corn Salad",
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1166630.jpg&w=596&h=596&c=sc&poi=face&q=85",
+      "summary": "No cooking required for this refreshing side salad. Reviewer lutzflcat says, The shoepeg corn is crisp, and the dressing has a nice tang to it. This was a welcome change from my typical mac or potato salad that I often serve with grilled chicken.",
+      "bookmark": "yes"
+    },
+    {
+      "id": 4,
+      "name": "Shoepeg Corn Salad",
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1166630.jpg&w=596&h=596&c=sc&poi=face&q=85",
+      "summary": "No cooking required for this refreshing side salad. Reviewer lutzflcat says, The shoepeg corn is crisp, and the  ",
+      "bookmark": "yes"
     }
   ],
   "ingredients": [
@@ -18,8 +48,13 @@
       "id": 0,
       "recipeID": 0,
       "name": "Bacon",
-      "image": "https://www.marions-kochbuch.de/dru-pic/5283.jpg",
-      "summary": "Don't let the recipe name throw you off. Savory baked beans are given a sweet twist in this unique dish. This is a favorite at potlucks and barbeques, says recipe creator OHHCANDY. I've often wondered if I get invited for my company or my Cola Beans!"
+      "image": "https://www.marions-kochbuch.de/dru-pic/5283.jpg"
+    },
+    {
+      "id": 1,
+      "recipeID": 1,
+      "name": "Grape Tomatoes",
+      "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F52a7c6f0fd276f3a7902f30090549523607c4f87"
     }
   ]
 }
