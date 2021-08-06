@@ -27,4 +27,13 @@ export class AuthService {
         })
       );
   }
+
+  updateUser(user: User) {
+    console.log(user.id);
+    console.log(user.bookmarked);
+    return this.httpClient.patch<User>(
+      `${environment.apiURL}users/${user.id}`,
+      { id: user.id, bookmarked: [...user.bookmarked] }
+    );
+  }
 }
