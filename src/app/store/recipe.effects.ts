@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
+import { User } from '../models/auth';
 import { RecipeService } from '../services/recipe.service';
 import * as RecipeActions from './recipe.actions';
 
@@ -24,15 +25,26 @@ export class RecipeEffect {
     )
   );
 
-  changeBookmarkEffect$ = createEffect(() =>
+  /*changeBookmarkEffect$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RecipeActions.changeBookmark),
-      mergeMap((action) =>
-        this.recipeService.bookmarkRecipe(action.id, action.newValue).pipe(
-          map((recipe) => RecipeActions.changeBookmarkSuccess({ recipe })),
-          catchError(() => of({ type: 'change bookmark error' }))
-        )
-      )
+      mergeMap((action) => {
+        let user = <User>JSON.parse(<string>localStorage.getItem('user'));
+        if (action.newValue === 'yes') user.bookmarked.push(action.id);
+        else {
+          let index = user.bookmarked.indexOf(action.id);
+          user.bookmarked.splice(index, 1);
+          console.log('NO');
+        }
+        localStorage.setItem('user', JSON.stringify(user));
+        return this.recipeService
+          .bookmarkRecipe(action.id, action.newValue)
+          .pipe(
+            map((recipe) => RecipeActions.changeBookmarkSuccess({ recipe })),
+            catchError(() => of({ type: 'change bookmark error' }))
+          );
+      })
     )
   );
+  */
 }
