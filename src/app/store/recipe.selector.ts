@@ -1,4 +1,5 @@
 import { createSelector } from '@ngrx/store';
+import { User } from '../models/auth';
 import { Recipe } from '../models/recipe';
 import { AppState } from './app.state';
 import { RecipeState } from './recipe.reducer';
@@ -34,5 +35,12 @@ export const selectOneRecipeBasedOnID = createSelector(
 
 export const selectBookmarkedRecipes = createSelector(
   selectAllRecipes,
-  (recipes) => recipes.filter((recipe) => recipe.bookmark === 'yes')
+  (recipes) => {
+    let user = <User>JSON.parse(<string>localStorage.getItem('user'));
+    if (user)
+      return recipes.filter(
+        (recipe) => user.bookmarked.indexOf(recipe.id) !== -1
+      );
+    return [];
+  }
 );
