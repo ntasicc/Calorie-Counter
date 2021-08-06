@@ -14,6 +14,7 @@ import {
 } from '../../store/recipe.selector';
 import { selectAllIngredients } from 'src/app/store/ingredient.selectors';
 import { Bookmark } from 'src/app/models/bookmark';
+import { User } from 'src/app/models/auth';
 
 @Component({
   selector: 'app-recipe-list',
@@ -47,7 +48,7 @@ export class RecipeListComponent implements OnInit {
   changeBookmarkRecipe(bookmark: Bookmark) {
     this.store.dispatch(
       RecipeActions.changeBookmark({
-        id: bookmark.id,
+        recipe: bookmark.recipe,
         newValue: bookmark.newValue,
       })
     );
