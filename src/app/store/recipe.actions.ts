@@ -20,7 +20,7 @@ export const selectRecipe = createAction(
 export const changeBookmark = createAction(
   'Change bookmark',
   props<{
-    id: number;
+    recipe: Recipe;
     newValue: string;
   }>()
 );
