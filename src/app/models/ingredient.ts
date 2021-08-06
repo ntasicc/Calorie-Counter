@@ -1,6 +1,6 @@
 export interface Ingredient {
   id: number;
-  recipeIDs: [];
+  recipeID: number;
   name: string;
   image: string;
   calories: string;
