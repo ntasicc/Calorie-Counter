@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
+import { User } from '../models/auth';
 import { AuthService } from '../services/auth.service';
 import * as AuthActions from './auth.actions';
 
@@ -25,8 +26,11 @@ export class AuthtEffect {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.logoutUser),
-        tap(() => {
+        mergeMap((action) => {
           localStorage.removeItem('user');
+          return this.AuthService.updateUser(action.user).pipe(
+            catchError(() => of({ type: 'update user error' }))
+          );
         })
       ),
     { dispatch: false }
