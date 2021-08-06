@@ -1,4 +1,6 @@
+import { Recipe } from './recipe';
+
 export interface Bookmark {
-  id: number;
+  recipe: Recipe;
   newValue: string;
 }
