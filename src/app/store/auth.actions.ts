@@ -11,4 +11,4 @@ export const loginUserSuccess = createAction(
   props<{ user: User }>()
 );
 
-export const logoutUser = createAction('Logout user');
+export const logoutUser = createAction('Logout user', props<{ user: User }>());
