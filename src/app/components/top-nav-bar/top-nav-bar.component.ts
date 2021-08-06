@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { User } from 'src/app/models/auth';
 import { AppState } from 'src/app/store/app.state';
 import { logoutUser } from '../../store/auth.actions';
 
@@ -19,6 +20,7 @@ export class TopNavBarComponent implements OnInit {
   }
 
   logout() {
-    this.store.dispatch(logoutUser());
+    let user = <User>JSON.parse(<string>localStorage.getItem('user'));
+    this.store.dispatch(logoutUser({ user: user }));
   }
 }

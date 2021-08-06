@@ -1,6 +1,18 @@
 <p>signin works!</p>
-<input type="text" #username placeholder="Enter username" name="username" />
+<input
+  type="text"
+  #username
+  placeholder="Enter username"
+  name="username"
+  autocomplete="off"
+/>
 
-<input type="text" #password placeholder="Enter password" name="password\" />
+<input
+  type="text"
+  #password
+  placeholder="Enter password"
+  name="password\"
+  autocomplete="off"
+/>
 
 <button (click)="signIn(username.value, password.value)">Sign in</button>
