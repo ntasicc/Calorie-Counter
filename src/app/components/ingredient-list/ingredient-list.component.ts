@@ -7,6 +7,8 @@ import { AppState } from 'src/app/store/app.state';
 import * as IngredientAction from '../../store/ingredient.actions';
 import { selectAllIngredients } from '../../store/ingredient.selectors';
 import { selectOneRecipeBasedOnID } from '../../store/recipe.selector';
+import { eatThisMeal } from 'src/app/store/auth.actions';
+import { User } from 'src/app/models/auth';
 
 @Component({
   selector: 'app-ingredient-list',
@@ -31,5 +33,13 @@ export class IngredientListComponent implements OnInit {
       );
     }
     this.ingredientsForRecipe = this.store.select(selectAllIngredients);
+  }
+
+  iAteIt() {
+    let user = <User>JSON.parse(<string>localStorage.getItem('user'));
+    if (this.selectedRecipe)
+      this.store.dispatch(
+        eatThisMeal({ recipe: this.selectedRecipe, user: user })
+      );
   }
 }
