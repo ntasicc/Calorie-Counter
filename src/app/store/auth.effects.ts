@@ -45,4 +45,26 @@ export class AuthtEffect {
       ),
     { dispatch: false }
   );
+  userAteOneMeal$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.eatThisMeal),
+        mergeMap((action) => {
+          let userUpdated = <User>{ ...action.user };
+          userUpdated.allTimeCalories += action.recipe.calories;
+          userUpdated.allTimeCarbs += action.recipe.carbs;
+          userUpdated.allTimeFat += action.recipe.fat;
+          userUpdated.allTimeProtein += action.recipe.protein;
+          return this.AuthService.userAteOneMeal(userUpdated).pipe(
+            map((user) => {
+              console.log(user);
+              AuthActions.updateUserInLocalStorage({ user });
+              localStorage.setItem('user', JSON.stringify(user));
+            }),
+            catchError(() => of({ type: 'update user error' }))
+          );
+        })
+      ),
+    { dispatch: false }
+  );
 }
