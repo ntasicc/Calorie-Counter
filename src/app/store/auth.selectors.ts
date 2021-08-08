@@ -15,7 +15,8 @@ export const selectIsLoggedIn = createSelector(
 
 export const selectUser = createSelector(
   selectUserFeature,
-  (state: AuthState) => ({
-    ...state.user,
-  })
+  (state: AuthState) =>
+    Object.values(state.entities)
+      .filter((user) => user != null)
+      .map((user) => <User>user)
 );
