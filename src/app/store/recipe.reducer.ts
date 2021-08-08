@@ -22,20 +22,20 @@ export const recipeReducer = createReducer(
   on(RecipeActions.selectRecipe, (state, { recipeID }) => ({
     ...state,
     selectedRecipeID: recipeID,
-  })),
-  on(RecipeActions.changeBookmark, (state, { recipe, newValue }) => {
-    let user = <User>JSON.parse(<string>localStorage.getItem('user'));
-    if (newValue === 'yes') user.bookmarked.push(recipe.id);
-    else {
-      let index = user.bookmarked.indexOf(recipe.id);
-      user.bookmarked.splice(index, 1);
-      console.log('NO');
-    }
-    localStorage.setItem('user', JSON.stringify(user));
-    // recipe.bookmark = newValue;
-    // return adapter.setOne(recipe, state);
-    return state;
-  })
+  }))
+  // on(RecipeActions.changeBookmark, (state, { recipe, newValue }) => {
+  //   let user = <User>JSON.parse(<string>localStorage.getItem('user'));
+  //   if (newValue === 'yes') user.bookmarked.push(recipe.id);
+  //   else {
+  //     let index = user.bookmarked.indexOf(recipe.id);
+  //     user.bookmarked.splice(index, 1);
+  //     console.log('NO');
+  //   }
+  //   localStorage.setItem('user', JSON.stringify(user));
+  //   // recipe.bookmark = newValue;
+  //   // return adapter.setOne(recipe, state);
+  //   return state;
+  // })
   // on(RecipeActions.changeBookmarkSuccess, (state, { recipe }) =>
   //   adapter.setOne(recipe, state)
   // )

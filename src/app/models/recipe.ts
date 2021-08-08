@@ -5,8 +5,8 @@ export interface Recipe {
   summary: string;
   description: string;
   bookmark: string;
-  calories: string;
-  carbs: string;
-  fat: string;
-  protein: string;
+  calories: number;
+  carbs: number;
+  fat: number;
+  protein: number;
 }

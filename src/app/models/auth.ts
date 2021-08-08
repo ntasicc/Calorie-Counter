@@ -5,8 +5,8 @@ export interface User {
   username: string;
   password: string;
   bookmarked: Array<number>;
-  allTimeCalories: string;
-  allTimeCarbs: string;
-  allTimeFat: string;
-  allTimeProtein: string;
+  allTimeCalories: number;
+  allTimeCarbs: number;
+  allTimeFat: number;
+  allTimeProtein: number;
 }

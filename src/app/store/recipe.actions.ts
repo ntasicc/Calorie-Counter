@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { User } from '../models/auth';
 import { Recipe } from '../models/recipe';
 
 export const loadAllRecipes = createAction('Load All Recipes');
