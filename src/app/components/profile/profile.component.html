@@ -1,5 +1,9 @@
-<p>profile works!</p>
-<div *ngIf="user">
-  <p>{{ user.firstName }}</p>
-  <p>{{ user.lastName }}</p>
+<div *ngIf="user" class="profile">
+  <h1>Your profile info</h1>
+  <p>First name: {{ user.firstName }}</p>
+  <p>Last name: {{ user.lastName }}</p>
+  <p>All time calories: {{ user.allTimeCalories }}</p>
+  <p>All time carbs: {{ user.allTimeCarbs }}</p>
+  <p>All time protein: {{ user.allTimeFat }}</p>
+  <p>All time fat: {{ user.allTimeProtein }}</p>
 </div>

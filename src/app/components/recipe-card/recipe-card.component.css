@@ -6,8 +6,8 @@
 
 .card {
   display: flex;
-  width: 300px;
-  height: 500px;
+  width: 400px;
+  height: 100%;
   margin: 20px 50px;
   border: 1px solid black;
   box-shadow: 10px 5px 5px gray;
@@ -19,6 +19,17 @@
   background-color: aqua;
 }
 
+.button {
+  display: flex;
+  height: 100%;
+  justify-content: baseline;
+  justify-self: baseline;
+  justify-items: baseline;
+  align-content: flex-end;
+  align-items: flex-end;
+  align-self: center;
+}
+
 button {
   background-color: aqua;
   width: 70px;
@@ -27,4 +38,14 @@ button {
   margin-right: 20px;
   border: none;
   font-weight: bold;
+  justify-content: baseline;
+  justify-self: baseline;
+  justify-items: baseline;
+  align-content: flex-end;
+  align-items: flex-end;
+  align-self: center;
+}
+
+.container {
+  display: flex;
 }

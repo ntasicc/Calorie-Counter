@@ -1,15 +1,20 @@
-<div class="card" *ngIf="recipe">
-  <div class="name">
-    <h2>{{ recipe.name }}</h2>
-    <div *ngIf="bookmarked === 'no'">
-      <button (click)="changeBookmarkRecipe('yes')">Bookmark</button>
+<div class="container">
+  <div class="card" *ngIf="recipe">
+    <div class="name">
+      <h2>{{ recipe.name }}</h2>
+      <div class="bookmark" *ngIf="bookmarked === 'no'">
+        <button (click)="changeBookmarkRecipe('yes')">Bookmark</button>
+      </div>
+      <div class="bookmark" *ngIf="bookmarked === 'yes'">
+        <button (click)="changeBookmarkRecipe('no')">Remove</button>
+      </div>
     </div>
-    <div *ngIf="bookmarked === 'yes'">
-      <button (click)="changeBookmarkRecipe('no')">Remove bookmark</button>
+    <img class="image" [src]="recipe.image" alt="recipe image" />
+    <div>
+      <p>{{ recipe.summary }}</p>
+    </div>
+    <div class="button">
+      <button (click)="showDetailsForRecipe()">+Details</button>
     </div>
   </div>
-  <img class="image" [src]="recipe.image" alt="recipe image" />
-  <p>{{ recipe.summary }}</p>
-
-  <button (click)="showDetailsForRecipe()">+Details</button>
 </div>

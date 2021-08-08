@@ -28,11 +28,11 @@ export class RecipeListComponent implements OnInit {
   constructor(private store: Store<AppState>, private router: Router) {}
   header: string = '';
   ngOnInit(): void {
+    this.store.dispatch(RecipeActions.loadAllRecipes());
     if (this.router.url === '/mylist') {
       this.recipes = this.store.select(selectBookmarkedRecipes);
       this.header = 'Bookmarked recipes';
     } else {
-      this.store.dispatch(RecipeActions.loadAllRecipes());
       this.recipes = this.store.select(selectAllRecipes);
       this.header = 'List of all recipes';
     }

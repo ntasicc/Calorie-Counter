@@ -1,4 +1,12 @@
-<div class="card" *ngIf="ingredient">
-  <h2>{{ ingredient.name }}</h2>
-  <img [src]="ingredient.image" alt="ingredient image" />
+<div class="container">
+  <div class="card" *ngIf="ingredient">
+    <h2>{{ ingredient.name }}</h2>
+    <div class="image">
+      <img [src]="ingredient.image" alt="ingredient image" />
+    </div>
+    <p>Calories:{{ ingredient.calories }}</p>
+    <p>Carbs:{{ ingredient.calories }}</p>
+    <p>Fat:{{ ingredient.fat }}</p>
+    <p>Protein:{{ ingredient.protein }}</p>
+  </div>
 </div>

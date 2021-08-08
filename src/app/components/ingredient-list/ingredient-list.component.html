@@ -1,6 +1,34 @@
-<div *ngIf="selectedRecipe">
-  <h1>List of all ingredients for {{ selectedRecipe.name }}</h1>
-</div>
-<div *ngFor="let ingredient of ingredientsForRecipe | async">
-  <app-ingredient-card [ingredient]="ingredient"></app-ingredient-card>
+<div class="main-container">
+  <div *ngIf="selectedRecipe">
+    <div class="container">
+      <div class="card">
+        <div class="name">
+          <h2>{{ selectedRecipe.name }}</h2>
+        </div>
+        <img class="image" [src]="selectedRecipe.image" alt="recipe image" />
+        <div>
+          <p>{{ selectedRecipe.summary }}</p>
+        </div>
+        <div class="stats">
+          <p>Calories:{{ selectedRecipe.calories }}</p>
+          <p>Carbs:{{ selectedRecipe.calories }}</p>
+          <p>Fat:{{ selectedRecipe.fat }}</p>
+          <p>Protein:{{ selectedRecipe.protein }}</p>
+        </div>
+        <div class="button">
+          <button (click)="iAteIt()">+ Eat</button>
+        </div>
+      </div>
+      <div class="list-ingr">
+        <h2>List of all ingredients</h2>
+        <div class="ingr-container">
+          <div *ngFor="let ingredient of ingredientsForRecipe | async">
+            <app-ingredient-card
+              [ingredient]="ingredient"
+            ></app-ingredient-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -13,6 +13,7 @@
   flex-direction: row;
   flex-grow: 1;
   height: 100%;
+  width: 100%;
 }
 
 .link {
@@ -23,4 +24,10 @@
   margin-top: 15px;
   text-decoration: none;
   color: black;
+}
+
+.profile-func {
+  justify-content: flex-end;
+  margin-right: 15px;
+  width: 100%;
 }

@@ -1,0 +1,22 @@
+.signin {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 40%;
+  margin-top: 200px;
+}
+
+input {
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+button {
+  background-color: aqua;
+  width: 100px;
+  padding: 5px 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  align-self: center;
+}

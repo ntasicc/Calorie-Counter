@@ -2,9 +2,9 @@
   <div class="div-links">
     <a class="link" routerLink="listRecipes">Recipes</a>
     <a class="link" routerLink="mylist">My list</a>
-    <div *ngIf="isLoggedIn">
-      <a class="link" routerLink="profile">Profile</a>
-      <a class="link" routerLink="/" (click)="logout()">Logout</a>
-    </div>
+  </div>
+  <div *ngIf="isLoggedIn" class="div-links profile-func">
+    <a class="link" routerLink="profile">Profile</a>
+    <a class="link" routerLink="/" (click)="logout()">Logout</a>
   </div>
 </nav>
