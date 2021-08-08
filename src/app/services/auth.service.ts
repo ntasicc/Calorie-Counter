@@ -36,4 +36,17 @@ export class AuthService {
       { id: user.id, bookmarked: [...user.bookmarked] }
     );
   }
+
+  userAteOneMeal(user: User) {
+    return this.httpClient.patch<User>(
+      `${environment.apiURL}users/${user.id}`,
+      {
+        id: user.id,
+        allTimeCalories: user.allTimeCalories,
+        allTimeCarbs: user.allTimeCarbs,
+        allTimeFat: user.allTimeFat,
+        allTimeProtein: user.allTimeProtein,
+      }
+    );
+  }
 }
