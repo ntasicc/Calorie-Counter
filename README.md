@@ -1,6 +1,15 @@
-# AngularCalorieCounter
+# **Calorie Counter** :balance_scale:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+Track your daily calorie intake.
+
+## General info
+
+Calorie Counter offers a variety of healthy recipes and cooking methods. For each recipe, you can see the number of fat, calories, proteins, and carbs. The same statistic is shown for each ingredients. Users can log in to the app using their profile and can add meals that they ate so they can track daily intake.
+
+## Technologies
+
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+- For backend I used simple JSON server
 
 ## Development server
 
